@@ -3,6 +3,7 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
+    // No Public since enemies will be spawned at runtime.
     Transform player;
     //PlayerHealth playerHealth;
     //EnemyHealth enemyHealth;
@@ -17,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
         nav = GetComponent <UnityEngine.AI.NavMeshAgent> ();
     }
 
-
+    // Since it is not a Physics Object -> Update instead of FixedUpdate.
     void Update ()
     {
         //if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
