@@ -23,12 +23,14 @@ public class EnemyAttack : MonoBehaviour
         anim = GetComponent <Animator> ();
     }
 
-
+    // Called whenever anything goes into trigger
+    // @param other - the other collider that entered this collider.
     void OnTriggerEnter (Collider other)
     {
         if(other.gameObject == player)
         {
             playerInRange = true;
+            Debug.Log("Player in Range");
         }
     }
 
@@ -38,6 +40,7 @@ public class EnemyAttack : MonoBehaviour
         if(other.gameObject == player)
         {
             playerInRange = false;
+            Debug.Log("Player out of range");
         }
     }
 

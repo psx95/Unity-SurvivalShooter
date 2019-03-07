@@ -41,12 +41,13 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
+            // Move between colors smoothly
             damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
         damaged = false;
     }
 
-
+    // Called by the other scripts
     public void TakeDamage (int amount)
     {
         damaged = true;
